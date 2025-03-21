@@ -78,7 +78,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:49161/api/vessels",
+					"raw": "https://localhost:49161/api/vessels/{{id}}",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -86,7 +86,8 @@
 					"port": "49161",
 					"path": [
 						"api",
-						"vessels"
+						"vessels",
+						"{{id}}"
 					]
 				}
 			},
@@ -118,7 +119,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:49161/api/vessels/{id}",
+					"raw": "https://localhost:49161/api/vessels/{{id}}",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -127,7 +128,7 @@
 					"path": [
 						"api",
 						"vessels",
-						"{id}"
+						"{{id}}"
 					]
 				}
 			},
