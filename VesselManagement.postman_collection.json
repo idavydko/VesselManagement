@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "57650e1d-5d11-47df-916a-924c43cc9d2d",
+		"name": "VesselManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10037289"
+	},
+	"item": [
+		{
+			"name": "Register a new vessel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response success\", function () {\r",
+							"    pm.expect(pm.response.status).to.eql(\"OK\");\r",
+							"});\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"id\", pm.response.json());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"vessel1\",\r\n  \"imo\": \"12345678\",\r\n  \"type\": 1,\r\n  \"capacity\": 100000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:49161/api/vessels",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						"api",
+						"vessels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an existing vessel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"vessel Updated\",\r\n  \"imo\": \"12345678\",\r\n  \"type\": 2,\r\n  \"capacity\": 100000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:49161/api/vessels",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						"api",
+						"vessels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a list of all vessels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:49161/api/vessels",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						"api",
+						"vessels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a specific vessel by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:49161/api/vessels/{id}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "49161",
+					"path": [
+						"api",
+						"vessels",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
